@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DDSLoader</name>
+    </assembly>
+    <members>
+        <member name="T:Kerwis.DDSLoader.DDSLoader">
+            <summary>
+            加载DDS文件为Texture2D.通过单例Instance调用,因为要实现缓存已加载dds的功能
+            </summary>
+        </member>
+        <member name="F:Kerwis.DDSLoader.DDSLoader.Instance">
+            <summary>
+            DDSLoader的单例
+            </summary>
+        </member>
+        <member name="M:Kerwis.DDSLoader.DDSLoader.FromFile(System.String)">
+            <summary>
+            从指定的位置加载一张dds为UnityEngine.Texture2D,编码将自动识别(未经所有dds种类验证)
+            </summary>
+            <param name="DDSPath">dds的完整目录</param>
+            <returns>获得的纹理.如果失败则返回空</returns>
+        </member>
+        <member name="M:Kerwis.DDSLoader.DDSLoader.FromFile(System.String,UnityEngine.TextureFormat)">
+            <summary>
+            从指定的位置以指定TextureFormat加载一张dds为UnityEngine.Texture2D
+            </summary>
+            <param name="DDSPath">dds的完整目录</param>
+            <param name="textureFormat">自行指定的TextureFormat.如果与指定dds实际编码不符,将导致错误</param>
+            <returns>获得的纹理.如果失败则返回空</returns>
+        </member>
+        <member name="M:Kerwis.DDSLoader.DDSLoader.FromFile(System.String,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.Experimental.Rendering.TextureCreationFlags)">
+            <summary>
+            从指定的位置以指定GraphicsFormat,TextureCreationFlags加载一张dds为UnityEngine.Texture2D
+            </summary>
+            <param name="DDSPath">dds的完整目录</param>
+            <param name="graphicsFormat">自行指定的GraphicsFormat.如果与指定dds实际编码不符,将导致错误</param>
+            <param name="flags">自行指定TextureCreationFlags.如果与指定dds实际不符,将可能导致错误</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
